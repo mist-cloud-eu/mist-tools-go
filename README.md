@@ -8,7 +8,7 @@ $ go get github.com/mist-cloud-eu/mist-tools-go@<version>
 
 Where `<version>` is a tag on this repository.
 
-## Examlpe Usage
+## Example Usage
 
 The example below expects JSON on the form `{ "name": "Alan" }`,
 and will reply with a JSON message (depending on the river).

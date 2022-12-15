@@ -45,13 +45,13 @@ func invokeHandler(action string, handler func(string)) {
 	handler(e.Payload)
 }
 
-func PostToRapid[T interface{}](event string, reply T) {
+func PostToRapids[T interface{}](event string, reply T) {
 	body, _ := json.Marshal(reply)
-	PostBodyToRapid(event, bytes.NewBuffer(body))
+	PostBodyToRapids(event, bytes.NewBuffer(body))
 }
 
-func PostBodyToRapid(event string, body io.Reader) {
-	resp, err := http.Post(fmt.Sprintf("%s/%s", os.Getenv("RAPID"), event), "application/json", body)
+func PostBodyToRapids(event string, body io.Reader) {
+	resp, err := http.Post(fmt.Sprintf("%s/%s", os.Getenv("RAPIDS"), event), "application/json", body)
 	if err != nil {
 		fmt.Println("Get failed with error: ", err)
 	}

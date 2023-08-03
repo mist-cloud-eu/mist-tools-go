@@ -40,7 +40,7 @@ func main() {
             reply := Reply{
                 Msg: fmt.Sprintf("Hello, %s!", p.Name),
             }
-            mist.PostToRapid[Reply]("reply", reply)
+            mist.PostToRapids[Reply]("reply", reply)
         },
         "spanish-greeting": func(payload string) {
             var p Payload
@@ -48,7 +48,7 @@ func main() {
             reply := Reply{
                 Msg: fmt.Sprintf("Hola, %s!", p.Name),
             }
-            mist.PostToRapid[Reply]("reply", reply)
+            mist.PostToRapids[Reply]("reply", reply)
         },
     })
 }
